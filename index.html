@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог альбомов</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .app-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .select-wrapper {
+            margin-bottom: 20px;
+        }
+
+        #albums {
+            padding: 6px;
+            width: 280px;
+            font-size: 14px;
+        }
+
+        #loader {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #error-box {
+            color: red;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #album-content {
+            display: none;
+        }
+
+        #author {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+
+        #author h2 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        #author p {
+            margin: 5px 0;
+        }
+
+        #photos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .photo-card {
+            width: 180px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-caption {
+            font-size: 12px;
+            line-height: 16px;
+            height: 32px;
+            overflow: hidden;
+            margin-top: 8px;
+            color: #444;
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="app-container">
+        <h1>Каталог альбомов</h1>
+        
+        <div class="select-wrapper">
+            <label for="albums">Альбом:</label>
+            <select id="albums">
+                <option value="">Загрузка...</option>
+            </select>
+        </div>
+
+        <div id="loader"></div>
+        <div id="error-box"></div>
+
+        <div id="album-content">
+            <div id="author"></div>
+            <div id="photos"></div>
+        </div>
+    </div>
+</body>
+</html>
